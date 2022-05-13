@@ -1,5 +1,3 @@
-
-
 package ch.bzz.booklist.service;
 
 import javax.ws.rs.GET;
@@ -14,6 +12,10 @@ import javax.ws.rs.core.Response;
 @Path("test")
 public class TestService {
 
+    /**
+     * confirms the application runs
+     * @return  message
+     */
     @GET
     @Path("test")
     @Produces(MediaType.TEXT_PLAIN)

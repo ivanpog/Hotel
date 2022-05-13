@@ -16,8 +16,9 @@ import java.util.Set;
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "/home/bzz/webapp/booklist.properties";
+    private static final String PROPERTIES_PATH = "/home/bzz/webapp/bookList.properties";
     private static Properties properties = null;
+
     /**
      * define all provider classes
      *
@@ -29,13 +30,13 @@ public class Config extends Application {
         providers.add(TestService.class);
         return providers;
     }
+
     /**
      * Gets the value of a property
      *
      * @param property the key of the property to be read
      * @return the value of the property
      */
-
     public static String getProperty(String property) {
         if (Config.properties == null) {
             setProperties(new Properties());
@@ -67,7 +68,6 @@ public class Config extends Application {
      *
      * @param properties the value to set
      */
-
     private static void setProperties(Properties properties) {
         Config.properties = properties;
     }

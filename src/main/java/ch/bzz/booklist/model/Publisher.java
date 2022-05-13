@@ -1,5 +1,8 @@
 package ch.bzz.booklist.model;
 
+/**
+ * a book publisher
+ */
 public class Publisher {
     private String publisherUUID;
     private String publisher;
@@ -9,7 +12,6 @@ public class Publisher {
      *
      * @return value of publisherUUID
      */
-
     public String getPublisherUUID() {
         return publisherUUID;
     }
@@ -19,7 +21,6 @@ public class Publisher {
      *
      * @param publisherUUID the value to set
      */
-
     public void setPublisherUUID(String publisherUUID) {
         this.publisherUUID = publisherUUID;
     }
@@ -29,7 +30,6 @@ public class Publisher {
      *
      * @return value of publisher
      */
-
     public String getPublisher() {
         return publisher;
     }
@@ -39,7 +39,6 @@ public class Publisher {
      *
      * @param publisher the value to set
      */
-
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
