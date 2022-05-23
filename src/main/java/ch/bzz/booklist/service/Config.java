@@ -13,10 +13,13 @@ import java.util.Set;
  * configure the web services and properties
  */
 
+
+
+/////
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "/home/bzz/webapp/bookList.properties";
+    private static final String PROPERTIES_PATH = "/home/bzz/webapp/roomList.properties";
     private static Properties properties = null;
 
     /**
@@ -27,6 +30,7 @@ public class Config extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet providers = new HashSet<Class<?>>();
+        providers.add(RoomService.class);
         providers.add(TestService.class);
         return providers;
     }

@@ -1,7 +1,7 @@
 package ch.bzz.booklist.data;
 
-import ch.bzz.booklist.model.Book;
-import ch.bzz.booklist.model.Publisher;
+import ch.bzz.booklist.model.Room;
+import ch.bzz.booklist.model.Hotel;
 import ch.bzz.booklist.service.Config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,17 +17,17 @@ import java.util.List;
  */
 public class DataHandler {
     private static DataHandler instance = null;
-    private List<Book> bookList;
-    private List<Publisher> publisherList;
+    private List<Room> roomList;
+    private List<Hotel> hotelList;
 
     /**
      * private constructor defeats instantiation
      */
     private DataHandler() {
-        setPublisherList(new ArrayList<>());
-        readPublisherJSON();
-        setBookList(new ArrayList<>());
-        readBookJSON();
+        setHotelList(new ArrayList<>());
+        readHotelJSON();
+        setRoomList(new ArrayList<>());
+        readRoomJSON();
     }
 
     /**
@@ -45,62 +45,62 @@ public class DataHandler {
      * reads all books
      * @return list of books
      */
-    public List<Book> readAllBooks() {
-        return getBookList();
+    public List<Room> readAllRooms() {
+        return getRoomList();
     }
 
     /**
      * reads a book by its uuid
-     * @param bookUUID
+     * @param roomNumber
      * @return the Book (null=not found)
      */
-    public Book readBookByUUID(String bookUUID) {
-        Book book = null;
-        for (Book entry : getBookList()) {
-            if (entry.getBookUUID().equals(bookUUID)) {
-                book = entry;
+    public Room readRoomByNumber(int roomNumber) {
+        Room room = null;
+        for (Room entry : getRoomList()) {
+            if (entry.getRoomNumber()==roomNumber) {
+                room = entry;
             }
         }
-        return book;
+        return room;
     }
 
     /**
      * reads all Publishers
      * @return list of publishers
      */
-    public List<Publisher> readAllPublishers() {
+    public List<Hotel> readAllHotels() {
 
-        return getPublisherList();
+        return getHotelList();
     }
 
     /**
      * reads a publisher by its uuid
-     * @param publisherUUID
+     * @param hotelName
      * @return the Publisher (null=not found)
      */
-    public Publisher readPublisherByUUID(String publisherUUID) {
-        Publisher publisher = null;
-        for (Publisher entry : getPublisherList()) {
-            if (entry.getPublisherUUID().equals(publisherUUID)) {
-                publisher = entry;
+    public Hotel readHotelByName(String hotelName) {
+        Hotel hotel = null;
+        for (Hotel entry : getHotelList()) {
+            if (entry.getHotelName().equals(hotelName)) {
+                hotel = entry;
             }
         }
-        return publisher;
+        return hotel;
     }
 
     /**
      * reads the books from the JSON-file
      */
-    private void readBookJSON() {
+    private void readRoomJSON() {
         try {
-            String path = Config.getProperty("bookJSON");
+            String path = Config.getProperty("roomJSON");
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(path)
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Book[] books = objectMapper.readValue(jsonData, Book[].class);
-            for (Book book : books) {
-                getBookList().add(book);
+            Room[] rooms = objectMapper.readValue(jsonData, Room[].class);
+            for (Room room : rooms) {
+                getRoomList().add(room);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -110,17 +110,17 @@ public class DataHandler {
     /**
      * reads the publishers from the JSON-file
      */
-    private void readPublisherJSON() {
+    private void readHotelJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
-                            Config.getProperty("publisherJSON")
+                            Config.getProperty("hotelJSON")
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Publisher[] publishers = objectMapper.readValue(jsonData, Publisher[].class);
-            for (Publisher publisher : publishers) {
-                getPublisherList().add(publisher);
+            Hotel[] hotels = objectMapper.readValue(jsonData, Hotel[].class);
+            for (Hotel hotel : hotels) {
+                getHotelList().add(hotel);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -131,17 +131,17 @@ public class DataHandler {
      *
      * @return value of bookList
      */
-    private List<Book> getBookList() {
-        return bookList;
+    private List<Room> getRoomList() {
+        return roomList;
     }
 
     /**
      * sets bookList
      *
-     * @param bookList the value to set
+     * @param roomList the value to set
      */
-    private void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
+    private void setRoomList(List<Room> roomList) {
+        this.roomList = roomList;
     }
 
     /**
@@ -149,17 +149,17 @@ public class DataHandler {
      *
      * @return value of publisherList
      */
-    private List<Publisher> getPublisherList() {
-        return publisherList;
+    private List<Hotel> getHotelList() {
+        return hotelList;
     }
 
     /**
      * sets publisherList
      *
-     * @param publisherList the value to set
+     * @param hotelList the value to set
      */
-    private void setPublisherList(List<Publisher> publisherList) {
-        this.publisherList = publisherList;
+    private void setHotelList(List<Hotel> hotelList) {
+        this.hotelList = hotelList;
     }
 
 
