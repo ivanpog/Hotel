@@ -7,6 +7,7 @@ public class Hotel {
     //private String hotelUUID;
     private String hotelName;
 
+
     /**
      * gets publisherUUID
      *
