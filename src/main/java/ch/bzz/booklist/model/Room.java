@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
 
 /**
- * a book in the bookshelf
+ * a room in a hotel
  */
 public class Room {
     @JsonIgnore
@@ -18,16 +18,16 @@ public class Room {
     private String places;
 
     /**
-     * gets the publisherUUID from the Publisher-object
-     * @return
+     * gets the name of the rooms hotel
+     * @return hotelName
      */
     public String getHotelName() {
         return getHotel().getHotelName();
     }
 
     /**
-     * creates a Publisher-object without the booklist
-     * @param hotelName
+     * sets a name of rooms hotel
+     * @param hotelName the value to set
      */
     public void setHotelName(String hotelName) {
         setHotel( new Hotel());
@@ -38,16 +38,16 @@ public class Room {
     }
 
     /**
-     * gets publisher
+     * gets hotel
      *
-     * @return value of publisher
+     * @return hotel
      */
     public Hotel getHotel() {
         return hotel;
     }
 
     /**
-     * sets publisher
+     * sets hotel
      *
      * @param hotel the value to set
      */
@@ -56,16 +56,16 @@ public class Room {
     }
 
     /**
-     * gets bookUUID
+     * gets room number
      *
-     * @return value of bookUUID
+     * @return roomNumber
      */
     public int getRoomNumber() {
         return roomNumber;
     }
 
     /**
-     * sets bookUUID
+     * sets number of room
      *
      * @param roomNumber the value to set
      */
@@ -74,16 +74,16 @@ public class Room {
     }
 
     /**
-     * gets title
+     * gets size
      *
-     * @return value of title
+     * @return size
      */
     public String getSize() {
         return size;
     }
 
     /**
-     * sets title
+     * sets size
      *
      * @param size the value to set
      */
@@ -92,16 +92,16 @@ public class Room {
     }
 
     /**
-     * gets author
+     * gets price pro night of room
      *
-     * @return value of author
+     * @return priceNight
      */
     public BigDecimal getPriceNight() {
         return priceNight;
     }
 
     /**
-     * sets author
+     * sets price pro night of room
      *
      * @param priceNight the value to set
      */
@@ -109,32 +109,17 @@ public class Room {
         this.priceNight = priceNight;
     }
 
-
     /**
-     * gets price
+     * gets number of places in the room (how many people can sleep inside)
      *
-     * @return value of price
-     */
-
-
-    /**
-     * sets price
-     *
-     * @param price the value to set
-     */
-
-
-    /**
-     * gets isbn
-     *
-     * @return value of isbn
+     * @return places
      */
     public String getPlaces() {
         return places;
     }
 
     /**
-     * sets isbn
+     * sets number of places in room (how many people can sleep inside)
      *
      * @param places the value to set
      */

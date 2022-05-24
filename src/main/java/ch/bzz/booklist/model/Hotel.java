@@ -1,42 +1,22 @@
 package ch.bzz.booklist.model;
 
 /**
- * a book publisher
+ * Hotel with a name and rooms
  */
 public class Hotel {
-    //private String hotelUUID;
+    //private List<Room> roomList;
     private String hotelName;
 
-
     /**
-     * gets publisherUUID
-     *
-     * @return value of publisherUUID
-     */
-    /*public String getHotelUUID() {
-        return hotelUUID;
-    }*/
-
-    /**
-     * sets publisherUUID
-     *
-     * @param hotelUUID the value to set
-     */
-    /*public void setHotelUUID(String hotelUUID) {
-        this.hotelUUID = hotelUUID;
-    }*/
-
-    /**
-     * gets publisher
-     *
-     * @return value of publisher
+     * gets name of hotel
+     * @return hotelName
      */
     public String getHotelName() {
         return hotelName;
     }
 
     /**
-     * sets publisher
+     * sets name of hotel
      *
      * @param hotelName the value to set
      */

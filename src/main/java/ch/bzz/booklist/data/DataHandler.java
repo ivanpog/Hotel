@@ -42,17 +42,17 @@ public class DataHandler {
 
 
     /**
-     * reads all books
-     * @return list of books
+     * reads all rooms
+     * @return list of rooms
      */
     public List<Room> readAllRooms() {
         return getRoomList();
     }
 
     /**
-     * reads a book by its uuid
+     * reads a room by its number
      * @param roomNumber
-     * @return the Book (null=not found)
+     * @return room
      */
     public Room readRoomByNumber(int roomNumber) {
         Room room = null;
@@ -65,8 +65,8 @@ public class DataHandler {
     }
 
     /**
-     * reads all Publishers
-     * @return list of publishers
+     * reads all Hotels
+     * @return list of hotels
      */
     public List<Hotel> readAllHotels() {
 
@@ -74,9 +74,9 @@ public class DataHandler {
     }
 
     /**
-     * reads a publisher by its uuid
+     * reads a hotel by its name
      * @param hotelName
-     * @return the Publisher (null=not found)
+     * @return hotel
      */
     public Hotel readHotelByName(String hotelName) {
         Hotel hotel = null;
@@ -89,7 +89,7 @@ public class DataHandler {
     }
 
     /**
-     * reads the books from the JSON-file
+     * reads rooms from the JSON-file
      */
     private void readRoomJSON() {
         try {
@@ -108,7 +108,7 @@ public class DataHandler {
     }
 
     /**
-     * reads the publishers from the JSON-file
+     * reads hotels from the JSON-file
      */
     private void readHotelJSON() {
         try {
@@ -126,17 +126,18 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
+
     /**
-     * gets bookList
+     * gets roomList
      *
-     * @return value of bookList
+     * @return value of roomList
      */
     private List<Room> getRoomList() {
         return roomList;
     }
 
     /**
-     * sets bookList
+     * sets roomList
      *
      * @param roomList the value to set
      */
@@ -145,16 +146,16 @@ public class DataHandler {
     }
 
     /**
-     * gets publisherList
+     * gets hotelList
      *
-     * @return value of publisherList
+     * @return value of hotelList
      */
     private List<Hotel> getHotelList() {
         return hotelList;
     }
 
     /**
-     * sets publisherList
+     * sets hotelList
      *
      * @param hotelList the value to set
      */
