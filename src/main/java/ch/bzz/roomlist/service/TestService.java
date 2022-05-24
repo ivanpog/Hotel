@@ -1,4 +1,4 @@
-package ch.bzz.booklist.service;
+package ch.bzz.roomlist.service;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

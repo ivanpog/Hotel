@@ -1,7 +1,7 @@
-package ch.bzz.booklist.service;
+package ch.bzz.roomlist.service;
 
-import ch.bzz.booklist.data.DataHandler;
-import ch.bzz.booklist.model.Room;
+import ch.bzz.roomlist.data.DataHandler;
+import ch.bzz.roomlist.model.Room;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -9,7 +9,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.awt.*;
 import java.util.List;
 
 @Path("room")

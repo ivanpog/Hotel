@@ -1,6 +1,6 @@
-package ch.bzz.booklist.model;
+package ch.bzz.roomlist.model;
 
-import ch.bzz.booklist.data.DataHandler;
+import ch.bzz.roomlist.data.DataHandler;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;

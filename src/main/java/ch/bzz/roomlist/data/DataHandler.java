@@ -1,8 +1,8 @@
-package ch.bzz.booklist.data;
+package ch.bzz.roomlist.data;
 
-import ch.bzz.booklist.model.Room;
-import ch.bzz.booklist.model.Hotel;
-import ch.bzz.booklist.service.Config;
+import ch.bzz.roomlist.model.Room;
+import ch.bzz.roomlist.model.Hotel;
+import ch.bzz.roomlist.service.Config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

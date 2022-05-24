@@ -1,4 +1,4 @@
-package ch.bzz.booklist.model;
+package ch.bzz.roomlist.model;
 
 /**
  * Hotel with a name and rooms
