@@ -1,0 +1,44 @@
+[
+    {
+        "roomNumber": 1,
+        "size": "small",
+        "priceNight": 333.33,
+        "hotelName": "Hilton",
+        "places": 3
+    },
+    {
+        "roomNumber": 2,
+        "size": "medium",
+        "priceNight": 640.90,
+        "hotelName": "Hilton",
+        "places": 4
+    },
+    {
+        "roomNumber": 3,
+        "size": "small",
+        "priceNight": 111.11,
+        "hotelName": "Ibis",
+        "places": 3
+    },
+    {
+        "roomNumber": 4,
+        "size": "ultra small",
+        "priceNight": 98.90,
+        "hotelName": "Ibis",
+        "places": 2
+    },
+    {
+        "roomNumber": 5,
+        "size": "large",
+        "priceNight": 987.50,
+        "hotelName": "Four Seasons",
+        "places": 6
+    },
+    {
+        "roomNumber": 6,
+        "size": "king size",
+        "priceNight": 555.55,
+        "hotelName": "Four Seasons",
+        "places": 10
+    }
+]
