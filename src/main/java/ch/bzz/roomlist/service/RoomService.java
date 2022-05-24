@@ -28,7 +28,7 @@ public class RoomService {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readBook(
+    public Response readRoom(
             @QueryParam("number") int roomNumber
     ) {
         Room room = DataHandler.getInstance().readRoomByNumber(roomNumber);
