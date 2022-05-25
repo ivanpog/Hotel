@@ -18,7 +18,7 @@ public class RoomService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listRooms() {
-        List<Room> roomList = DataHandler.getInstance().readAllRooms();
+        List<Room> roomList = DataHandler.readAllRooms();
         return Response
                 .status(200)
                 .entity(roomList)
@@ -31,7 +31,7 @@ public class RoomService {
     public Response readRoom(
             @QueryParam("number") int roomNumber
     ) {
-        Room room = DataHandler.getInstance().readRoomByNumber(roomNumber);
+        Room room = DataHandler.readRoomByNumber(roomNumber);
         return Response
                 .status(200)
                 .entity(room)

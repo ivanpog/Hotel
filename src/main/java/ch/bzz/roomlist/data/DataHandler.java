@@ -16,28 +16,14 @@ import java.util.List;
  * reads and writes the data in the JSON-files
  */
 public class DataHandler {
-    private static DataHandler instance = null;
-    private List<Room> roomList;
-    private List<Hotel> hotelList;
+    private static List<Room> roomList;
+    private static List<Hotel> hotelList;
 
     /**
      * private constructor defeats instantiation
      */
     private DataHandler() {
-        setHotelList(new ArrayList<>());
-        readHotelJSON();
-        setRoomList(new ArrayList<>());
-        readRoomJSON();
-    }
 
-    /**
-     * gets the only instance of this class
-     * @return
-     */
-    public static DataHandler getInstance() {
-        if (instance == null)
-            instance = new DataHandler();
-        return instance;
     }
 
 
@@ -46,7 +32,7 @@ public class DataHandler {
      * reads all rooms
      * @return list of rooms
      */
-    public List<Room> readAllRooms() {
+    public static List<Room> readAllRooms() {
         return getRoomList();
     }
 
@@ -55,7 +41,7 @@ public class DataHandler {
      * @param roomNumber
      * @return room
      */
-    public Room readRoomByNumber(int roomNumber) {
+    public static Room readRoomByNumber(int roomNumber) {
         Room room = null;
         for (Room entry : getRoomList()) {
             if (entry.getRoomNumber()==roomNumber) {
@@ -69,7 +55,7 @@ public class DataHandler {
      * reads all Hotels
      * @return list of hotels
      */
-    public List<Hotel> readAllHotels() {
+    public static List<Hotel> readAllHotels() {
 
         return getHotelList();
     }
@@ -79,7 +65,7 @@ public class DataHandler {
      * @param hotelName
      * @return hotel
      */
-    public Hotel readHotelByName(String hotelName) {
+    public static Hotel readHotelByName(String hotelName) {
         Hotel hotel = null;
         for (Hotel entry : getHotelList()) {
             if (entry.getHotelName().equals(hotelName)) {
@@ -92,7 +78,7 @@ public class DataHandler {
     /**
      * reads rooms from the JSON-file
      */
-    private void readRoomJSON() {
+    private static void readRoomJSON() {
         try {
             String path = Config.getProperty("roomJSON");
             byte[] jsonData = Files.readAllBytes(
@@ -111,7 +97,7 @@ public class DataHandler {
     /**
      * reads hotels from the JSON-file
      */
-    private void readHotelJSON() {
+    private static void readHotelJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
@@ -133,7 +119,11 @@ public class DataHandler {
      *
      * @return value of roomList
      */
-    private List<Room> getRoomList() {
+    private static List<Room> getRoomList() {
+        if (roomList == null) {
+            setRoomList(new ArrayList<>());
+            readRoomJSON();
+        }
         return roomList;
     }
 
@@ -142,8 +132,8 @@ public class DataHandler {
      *
      * @param roomList the value to set
      */
-    private void setRoomList(List<Room> roomList) {
-        this.roomList = roomList;
+    private static void setRoomList(List<Room> roomList) {
+        DataHandler.roomList = roomList;
     }
 
     /**
@@ -151,7 +141,11 @@ public class DataHandler {
      *
      * @return value of hotelList
      */
-    private List<Hotel> getHotelList() {
+    private static List<Hotel> getHotelList() {
+        if (hotelList == null) {
+            setHotelList(new ArrayList<>());
+            readHotelJSON();
+        }
         return hotelList;
     }
 
@@ -160,8 +154,8 @@ public class DataHandler {
      *
      * @param hotelList the value to set
      */
-    private void setHotelList(List<Hotel> hotelList) {
-        this.hotelList = hotelList;
+    private static void setHotelList(List<Hotel> hotelList) {
+        DataHandler.hotelList = hotelList;
     }
 
 

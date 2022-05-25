@@ -31,7 +31,7 @@ public class Room {
      */
     public void setHotelName(String hotelName) {
         setHotel( new Hotel());
-        Hotel hotel = DataHandler.getInstance().readHotelByName(hotelName);
+        Hotel hotel = DataHandler.readHotelByName(hotelName);
         getHotel().setHotelName(hotelName);
         getHotel().setHotelName(hotel.getHotelName());
 
