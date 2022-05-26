@@ -4,9 +4,12 @@ import ch.bzz.roomlist.model.Room;
 import ch.bzz.roomlist.model.Hotel;
 import ch.bzz.roomlist.service.Config;
 
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -16,6 +19,7 @@ import java.util.List;
  * reads and writes the data in the JSON-files
  */
 public class DataHandler {
+    private static DataHandler instance;
     private static List<Room> roomList;
     private static List<Hotel> hotelList;
 
@@ -52,6 +56,38 @@ public class DataHandler {
     }
 
     /**
+     * inserts a new room to the list
+     * @param room the room to be saved
+     */
+    public static void insertRoom(Room room){
+        getRoomList().add(room);
+        writeRoomJSON();
+    }
+
+    /**
+     * updates the list
+     */
+    public static void updateRoom(){
+        writeRoomJSON();
+    }
+
+    /**
+     * deletes a room identified by the number
+     * @param roomNumber is the key
+     * @return true or false
+     */
+    public static boolean deleteRoom(int roomNumber){
+        Room room=readRoomByNumber(roomNumber);
+        if(room!=null){
+            getRoomList().remove(room);
+            writeRoomJSON();
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
      * reads all Hotels
      * @return list of hotels
      */
@@ -76,6 +112,40 @@ public class DataHandler {
     }
 
     /**
+     * inserts a new hotel into the list
+     *
+     * @param hotel the hotel to be saved
+     */
+    public static void insertHotel(Hotel hotel) {
+        getHotelList().add(hotel);
+        writeHotelJSON();
+    }
+
+    /**
+     * updates the list of hotels
+     */
+    public static void updateHotel() {
+        writeHotelJSON();
+    }
+
+    /**
+     * deletes a hotel identified by the name of hotel
+     * @param hotelName  the key
+     * @return  true or false
+     */
+    public static boolean deleteHotel(String hotelName) {
+        Hotel hotel = readHotelByName(hotelName);
+        if (hotel != null) {
+            getHotelList().remove(hotel);
+            writeHotelJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
      * reads rooms from the JSON-file
      */
     private static void readRoomJSON() {
@@ -93,6 +163,27 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
+
+
+    /**
+     * writes the list of rooms to the JSON-file
+     */
+    private static void writeRoomJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("roomJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getRoomList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 
     /**
      * reads hotels from the JSON-file
@@ -113,6 +204,28 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
+
+
+    /**
+     * writes the list of hotels to the JSON-file
+     */
+    private static void writeHotelJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("hotelJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getHotelList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
 
     /**
      * gets roomList

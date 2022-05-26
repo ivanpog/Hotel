@@ -15,7 +15,7 @@ public class Room {
     private int roomNumber;
     private String size;
     private BigDecimal priceNight;
-    private String places;
+    private int places;
 
     /**
      * gets the name of the rooms hotel
@@ -114,7 +114,7 @@ public class Room {
      *
      * @return places
      */
-    public String getPlaces() {
+    public int getPlaces() {
         return places;
     }
 
@@ -123,7 +123,7 @@ public class Room {
      *
      * @param places the value to set
      */
-    public void setPlaces(String places) {
+    public void setPlaces(int places) {
         this.places = places;
     }
 }

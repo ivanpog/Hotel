@@ -8,6 +8,13 @@ public class Hotel {
     private String hotelName;
 
     /**
+     * default constructor
+     */
+    public Hotel(){
+
+    }
+
+    /**
      * gets name of hotel
      * @return hotelName
      */
