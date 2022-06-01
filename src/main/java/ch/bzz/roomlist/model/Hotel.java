@@ -5,6 +5,7 @@ package ch.bzz.roomlist.model;
  */
 public class Hotel {
     //private List<Room> roomList;
+    private int number;
     private String hotelName;
 
     /**
@@ -20,6 +21,14 @@ public class Hotel {
      */
     public String getHotelName() {
         return hotelName;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     /**

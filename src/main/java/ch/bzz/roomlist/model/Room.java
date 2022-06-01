@@ -25,6 +25,8 @@ public class Room {
         return getHotel().getHotelName();
     }
 
+
+
     /**
      * sets a name of rooms hotel
      * @param hotelName the value to set
