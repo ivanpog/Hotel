@@ -3,6 +3,10 @@ package ch.bzz.roomlist.service;
 import ch.bzz.roomlist.data.DataHandler;
 import ch.bzz.roomlist.model.Room;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -28,9 +32,17 @@ public class RoomService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readRoom(
-            @QueryParam("number") int roomNumber
-    ) {
+            //here
+            @NotNull
+            @QueryParam("number") Integer roomNumber
+
+    )
+    {
+        int httpStatus = 200;
         Room room = DataHandler.readRoomByNumber(roomNumber);
+        if (room == null) {
+            httpStatus = 410;
+        }
         return Response
                 .status(200)
                 .entity(room)
@@ -39,29 +51,18 @@ public class RoomService {
 
     /**
      * creates a room inside of roomList
-     * @param roomNumber
-     * @param size
-     * @param priceNight
      * @param hotelName
-     * @param places
      * @return new room
      */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response insertBook(
-            @FormParam("roomNumber") int roomNumber,
-            @FormParam("size") String size,
-            @FormParam("priceNight") BigDecimal priceNight,
-            @FormParam("hotelName") String hotelName,
-            @FormParam("places")int places
+    public Response insertRoom(
+            @Valid @BeanParam Room room,
+            @FormParam("hotelName") String hotelName
     ){
-        Room room=new Room();
-        room.setRoomNumber(roomNumber);
-        room.setSize(size);
-        room.setPriceNight(priceNight);
+
         room.setHotelName(hotelName);
-        room.setPlaces(places);
 
         DataHandler.insertRoom(room);
         return Response
@@ -72,32 +73,24 @@ public class RoomService {
 
     /**
      * updates a room inside of list
-     * @param roomNumber
-     * @param size
-     * @param priceNight
      * @param hotelName
-     * @param places
      * @return updated room
      */
     @POST
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateBook(
-            @FormParam("roomNumber") int roomNumber,
-            @FormParam("size") String size,
-            @FormParam("priceNight") BigDecimal priceNight,
-            @FormParam("hotelName") String hotelName,
-            @FormParam("places")int places
+    public Response updateRoom(
+            @Valid @BeanParam Room room,
+            @FormParam("hotelName") String hotelName
 
     ){
         int httpStatus=200;
-        Room room=DataHandler.readRoomByNumber(roomNumber);
-        if (room!=null){
-            room.setRoomNumber(roomNumber);
-            room.setSize(size);
-            room.setPriceNight(priceNight);
-            room.setHotelName(hotelName);
-            room.setPlaces(places);
+        Room oldRoom=DataHandler.readRoomByNumber(room.getRoomNumber());
+        if (oldRoom!=null){
+            oldRoom.setSize(room.getSize());
+            oldRoom.setPriceNight(room.getPriceNight());
+            oldRoom.setHotelName(room.getHotelName());
+            oldRoom.setPlaces(room.getPlaces());
 
             DataHandler.updateRoom();
         }else{
@@ -116,6 +109,8 @@ public class RoomService {
     @Produces(MediaType.TEXT_PLAIN)
 
     public Response deleteBook(
+            //here
+            @NotNull
             @QueryParam("roomNumber") int roomNumber
     ){
         int httpStatus=200;

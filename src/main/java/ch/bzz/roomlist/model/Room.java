@@ -3,6 +3,8 @@ package ch.bzz.roomlist.model;
 import ch.bzz.roomlist.data.DataHandler;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.validation.constraints.*;
+import javax.ws.rs.FormParam;
 import java.math.BigDecimal;
 
 /**
@@ -12,10 +14,26 @@ public class Room {
     @JsonIgnore
     private Hotel hotel;
 
-    private int roomNumber;
+    //here
+    @FormParam("roomNumber")
+    @NotNull
+    private Integer roomNumber;
+
+    //here
+    @FormParam("size")
+    @NotEmpty
     private String size;
+
+    //here
+    @FormParam("priceNight")
+    @DecimalMin(value="10.00")
+    @DecimalMax(value="99999.99")
     private BigDecimal priceNight;
-    private int places;
+
+    @FormParam("places")
+    @NotNull
+    @Max(value=20)
+    private Integer places;
 
     /**
      * gets the name of the rooms hotel

@@ -3,6 +3,7 @@ package ch.bzz.roomlist.service;
 import ch.bzz.roomlist.data.DataHandler;
 import ch.bzz.roomlist.model.Hotel;
 
+import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -38,6 +39,8 @@ public class HotelService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readPublisher(
+            //here
+            @NotEmpty
             @QueryParam("hotelName") String hotelName
     ) {
         int httpStatus = 200;
@@ -102,6 +105,8 @@ public class HotelService {
     @Produces(MediaType.TEXT_PLAIN)
 
     public Response deleteHotel(
+            //here
+            @NotEmpty
             @QueryParam("hotelName") String hotelName
     ){
         int httpStatus=200;

@@ -45,7 +45,7 @@ public class DataHandler {
      * @param roomNumber
      * @return room
      */
-    public static Room readRoomByNumber(int roomNumber) {
+    public static Room readRoomByNumber(Integer roomNumber) {
         Room room = null;
         for (Room entry : getRoomList()) {
             if (entry.getRoomNumber()==roomNumber) {
@@ -76,7 +76,7 @@ public class DataHandler {
      * @param roomNumber is the key
      * @return true or false
      */
-    public static boolean deleteRoom(int roomNumber){
+    public static boolean deleteRoom(Integer roomNumber){
         Room room=readRoomByNumber(roomNumber);
         if(room!=null){
             getRoomList().remove(room);
