@@ -88,6 +88,7 @@ public class RoomService {
         Room oldRoom=DataHandler.readRoomByNumber(room.getRoomNumber());
         if (oldRoom!=null){
             oldRoom.setSize(room.getSize());
+            oldRoom.setRoomNumber(room.getRoomNumber());
             oldRoom.setPriceNight(room.getPriceNight());
             oldRoom.setHotelName(room.getHotelName());
             oldRoom.setPlaces(room.getPlaces());

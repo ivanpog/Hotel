@@ -1,11 +1,24 @@
 package ch.bzz.roomlist.model;
 
+import javax.validation.constraints.*;
+import javax.ws.rs.FormParam;
+
 /**
  * Hotel with a name and rooms
  */
 public class Hotel {
     //private List<Room> roomList;
+
+    //here
+    @FormParam("number")
+    @NotNull
+    @Min(value = 1)
+    @Max(value = 300000)
     private int number;
+
+    //here
+    @NotEmpty
+    @Size(min = 2, max=20)
     private String hotelName;
 
     /**

@@ -3,6 +3,7 @@ package ch.bzz.roomlist.service;
 import ch.bzz.roomlist.data.DataHandler;
 import ch.bzz.roomlist.model.Hotel;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -59,12 +60,8 @@ public class HotelService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertHotel(
-            @FormParam("hotelName") String hotelName,
-            @FormParam("number") int number
+            @Valid @BeanParam Hotel hotel
     ){
-        Hotel hotel=new Hotel();
-        hotel.setHotelName(hotelName);
-        hotel.setNumber(number);
 
         DataHandler.insertHotel(hotel);
         return Response
@@ -77,15 +74,14 @@ public class HotelService {
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateHotel(
-            @FormParam("hotelName") String hotelName,
-            @FormParam("number") int number
+            @Valid @BeanParam Hotel hotel
 
     ){
         int httpStatus=200;
-        Hotel hotel=DataHandler.readHotelByName(hotelName);
-        if (hotel!=null){
-            hotel.setHotelName(hotelName);
-            hotel.setNumber(number);
+        Hotel oldHotel=DataHandler.readHotelByName(hotel.getHotelName());
+        if (oldHotel!=null){
+            oldHotel.setHotelName(hotel.getHotelName());
+            oldHotel.setNumber(hotel.getNumber());
 
             DataHandler.updateHotel();
         }else{
