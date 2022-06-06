@@ -80,7 +80,7 @@ public class HotelService {
         int httpStatus=200;
         Hotel oldHotel=DataHandler.readHotelByName(hotel.getHotelName());
         if (oldHotel!=null){
-            oldHotel.setHotelName(hotel.getHotelName());
+            //oldHotel.setHotelName(hotel.getHotelName());
             oldHotel.setNumber(hotel.getNumber());
 
             DataHandler.updateHotel();

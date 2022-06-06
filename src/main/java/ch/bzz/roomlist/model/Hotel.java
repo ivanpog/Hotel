@@ -17,8 +17,9 @@ public class Hotel {
     private int number;
 
     //here
+    @FormParam("hotelName")
     @NotEmpty
-    @Size(min = 2, max=20)
+    @Pattern(regexp = "[a-zA-Z0-9]{2,20}")
     private String hotelName;
 
     /**

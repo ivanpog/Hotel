@@ -22,6 +22,7 @@ public class Room {
     //here
     @FormParam("size")
     @NotEmpty
+    @Pattern(regexp = "[\\S, \\D]{3,10}")
     private String size;
 
     //here
