@@ -11,15 +11,15 @@ public class Hotel {
 
     //here
     @FormParam("number")
-    //@NotNull
-    //@Min(value = 1)
-    //@Max(value = 300000)
+    @NotNull
+    @Min(value = 1)
+    @Max(value = 300000)
     private int number;
 
     //here
     @FormParam("hotelName")
-    //@NotEmpty
-    //@Pattern(regexp = "[a-zA-Z0-9]{2,20}")
+    @NotEmpty
+    @Pattern(regexp = "[a-zA-Z0-9]{2,20}")
     private String hotelName;
 
     /**

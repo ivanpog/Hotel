@@ -16,24 +16,24 @@ public class Room {
 
     //here
     @FormParam("roomNumber")
-    //@NotNull
+    @NotNull
     private Integer roomNumber;
 
     //here
     @FormParam("size")
-    //@NotEmpty
-    //@Pattern(regexp = "[\\S, \\D]{3,10}")
+    @NotEmpty
+    @Pattern(regexp = "[\\S, \\D]{3,10}")
     private String size;
 
     //here
     @FormParam("priceNight")
-    //@DecimalMin(value="10.00")
-    //@DecimalMax(value="99999.99")
+    @DecimalMin(value="10.00")
+    @DecimalMax(value="99999.99")
     private BigDecimal priceNight;
 
     @FormParam("places")
-    //@NotNull
-    //@Max(value=20)
+    @NotNull
+    @Max(value=20)
     private Integer places;
 
     /**
@@ -81,7 +81,7 @@ public class Room {
      *
      * @return roomNumber
      */
-    public int getRoomNumber() {
+    public Integer getRoomNumber() {
         return roomNumber;
     }
 
@@ -90,7 +90,7 @@ public class Room {
      *
      * @param roomNumber the value to set
      */
-    public void setRoomNumber(int roomNumber) {
+    public void setRoomNumber(Integer roomNumber) {
         this.roomNumber = roomNumber;
     }
 
@@ -135,7 +135,7 @@ public class Room {
      *
      * @return places
      */
-    public int getPlaces() {
+    public Integer getPlaces() {
         return places;
     }
 
@@ -144,7 +144,7 @@ public class Room {
      *
      * @param places the value to set
      */
-    public void setPlaces(int places) {
+    public void setPlaces(Integer places) {
         this.places = places;
     }
 }

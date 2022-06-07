@@ -90,7 +90,7 @@ public class RoomService {
             oldRoom.setSize(room.getSize());
             oldRoom.setRoomNumber(room.getRoomNumber());
             oldRoom.setPriceNight(room.getPriceNight());
-            oldRoom.setHotelName(room.getHotelName());
+            oldRoom.setHotelName(hotelName);
             oldRoom.setPlaces(room.getPlaces());
 
             DataHandler.updateRoom();
