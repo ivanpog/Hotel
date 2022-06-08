@@ -17,12 +17,14 @@ public class Room {
     //here
     @FormParam("roomNumber")
     @NotNull
+    @Min(1)
+    @Max(10000)
     private Integer roomNumber;
 
     //here
     @FormParam("size")
     @NotEmpty
-    @Pattern(regexp = "[\\S, \\D]{3,10}")
+    @Pattern(regexp = "[\\D]{3,10}")
     private String size;
 
     //here
@@ -32,7 +34,6 @@ public class Room {
     private BigDecimal priceNight;
 
     @FormParam("places")
-    @NotNull
     @Max(value=20)
     private Integer places;
 

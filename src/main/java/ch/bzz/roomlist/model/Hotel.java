@@ -12,9 +12,9 @@ public class Hotel {
     //here
     @FormParam("number")
     @NotNull
-    @Min(value = 1)
-    @Max(value = 300000)
-    private int number;
+    @Min(1)
+    @Max(300000)
+    private Integer number;
 
     //here
     @FormParam("hotelName")
@@ -37,11 +37,11 @@ public class Hotel {
         return hotelName;
     }
 
-    public int getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(Integer number) {
         this.number = number;
     }
 
