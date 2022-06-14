@@ -1,0 +1,2090 @@
+{
+	"info": {
+		"_postman_id": "9ed23301-9ee5-423b-b22f-c1559e0af80e",
+		"name": "Hotel Milestone 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Start program",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/test/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"test",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list of rooms",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list of hotels",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read room by number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/read?number=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"read"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read room by number (no number)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read hotel by name ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/read?hotelName=Novotel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"read"
+					],
+					"query": [
+						{
+							"key": "hotelName",
+							"value": "Novotel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read hotel by name (no name)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "small",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "345.68",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Seven",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room number too big",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "100000",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "small",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "345.68",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Ibis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room number 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "small",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "345.68",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Ibis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room size empty",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "345.68",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Ibis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room size with digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "44",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "345.68",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Ibis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room size too long",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "eeeeeeeeeeeeeeee",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "345.68",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Ibis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room size too short",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "ee",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "345.68",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Ibis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room priceNight too big",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "small",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "999999.99",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Ibis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room priceNight too small",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "small",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "9.05",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Ibis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create room places too big",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "small",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "345.68",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Ibis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "medium",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "110.90",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room places too big",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "medium",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "110.90",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "200000000000",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room priceNight too big",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "medium",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "9999999999.99",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room priceNight too small",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "medium",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "9.05",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room number too big",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "100000000000",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "medium",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "110.90",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room number 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "medium",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "110.90",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room size empty",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "110.90",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room size with digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "33",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "110.90",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room size too long",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "eeeeeeeeeeeeeeeeeeeeee",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "110.90",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update room size too short",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roomNumber",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "er",
+							"type": "text"
+						},
+						{
+							"key": "priceNight",
+							"value": "110.90",
+							"type": "text"
+						},
+						{
+							"key": "places",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Hilton",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/delete?roomNumber=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "roomNumber",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete room (not existing)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(410);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/room/delete?roomNumber=333333333",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"room",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "roomNumber",
+							"value": "333333333"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Hotel (not existing)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(410);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/delete?hotelName=Fourrrrrrrrr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "hotelName",
+							"value": "Fourrrrrrrrr"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Hotel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/delete?hotelName=Mariott",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "hotelName",
+							"value": "Mariott"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Hotel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "number",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Eight",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"create"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Hotel number too big",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "number",
+							"value": "300002",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Six",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"create"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Hotel hotelName too long",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "number",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Sixxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"create"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Hotel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "number",
+							"value": "999",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Seven",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Hotel number too big",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "number",
+							"value": "99999999999999999",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Four",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Hotel hotelName (not existing)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function(){",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "number",
+							"value": "9",
+							"type": "text"
+						},
+						{
+							"key": "hotelName",
+							"value": "Fourrrerewrewrewrwerew",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/BookList-1/resource/hotel/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BookList-1",
+						"resource",
+						"hotel",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
