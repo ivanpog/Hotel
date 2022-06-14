@@ -14,20 +14,17 @@ public class Room {
     @JsonIgnore
     private Hotel hotel;
 
-    //here
     @FormParam("roomNumber")
     @NotNull
     @Min(1)
     @Max(10000)
     private Integer roomNumber;
 
-    //here
     @FormParam("size")
     @NotEmpty
     @Pattern(regexp = "[\\D]{3,10}")
     private String size;
 
-    //here
     @FormParam("priceNight")
     @DecimalMin(value="10.00")
     @DecimalMax(value="99999.99")
@@ -37,19 +34,15 @@ public class Room {
     @Max(value=20)
     private Integer places;
 
-    /**
-     * gets the name of the rooms hotel
-     * @return hotelName
-     */
+
     public String getHotelName() {
         return getHotel().getHotelName();
     }
 
 
-
     /**
-     * sets a name of rooms hotel
-     * @param hotelName the value to set
+     * set name of hotel
+     * @param hotelName value to set
      */
     public void setHotelName(String hotelName) {
         setHotel( new Hotel());
@@ -60,8 +53,7 @@ public class Room {
     }
 
     /**
-     * gets hotel
-     *
+     * get hotel
      * @return hotel
      */
     public Hotel getHotel() {
@@ -69,17 +61,15 @@ public class Room {
     }
 
     /**
-     * sets hotel
-     *
-     * @param hotel the value to set
+     * set hotel of room
+     * @param hotel value to set
      */
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
     }
 
     /**
-     * gets room number
-     *
+     * get number
      * @return roomNumber
      */
     public Integer getRoomNumber() {
@@ -87,17 +77,15 @@ public class Room {
     }
 
     /**
-     * sets number of room
-     *
-     * @param roomNumber the value to set
+     * set number
+     * @param roomNumber value to set
      */
     public void setRoomNumber(Integer roomNumber) {
         this.roomNumber = roomNumber;
     }
 
     /**
-     * gets size
-     *
+     * get size
      * @return size
      */
     public String getSize() {
@@ -105,17 +93,15 @@ public class Room {
     }
 
     /**
-     * sets size
-     *
-     * @param size the value to set
+     * set size
+     * @param size value to set
      */
     public void setSize(String size) {
         this.size = size;
     }
 
     /**
-     * gets price pro night of room
-     *
+     * get price per night
      * @return priceNight
      */
     public BigDecimal getPriceNight() {
@@ -123,17 +109,15 @@ public class Room {
     }
 
     /**
-     * sets price pro night of room
-     *
-     * @param priceNight the value to set
+     * set price per night
+     * @param priceNight value to set
      */
     public void setPriceNight(BigDecimal priceNight) {
         this.priceNight = priceNight;
     }
 
     /**
-     * gets number of places in the room (how many people can sleep inside)
-     *
+     * get places
      * @return places
      */
     public Integer getPlaces() {
@@ -141,9 +125,8 @@ public class Room {
     }
 
     /**
-     * sets number of places in room (how many people can sleep inside)
-     *
-     * @param places the value to set
+     * set places
+     * @param places value to set
      */
     public void setPlaces(Integer places) {
         this.places = places;

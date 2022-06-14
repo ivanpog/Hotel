@@ -1,11 +1,29 @@
-[
-    {
-        "hotelName": "Hilton"
-    },
-    {
-        "hotelName": "Ibis"
-    },
-    {
-        "hotelName": "Four Seasons"
-    }
-]   
+[ {
+  "number" : 1,
+  "hotelName" : "Ibis"
+},
+{
+  "number" : 2,
+  "hotelName" : "Hilton"
+},
+{
+  "number" : 3,
+  "hotelName" : "Four Seasons"
+},
+{
+  "number" : 4,
+  "hotelName" : "Novotel"
+},
+{
+  "number" : 5,
+  "hotelName" : "Mariott"
+},
+{
+  "number" : 6,
+  "hotelName" : "Six"
+},
+{
+  "number" : 7,
+  "hotelName" : "Seven"
+}
+ ]

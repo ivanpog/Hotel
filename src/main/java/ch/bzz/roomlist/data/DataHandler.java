@@ -30,8 +30,6 @@ public class DataHandler {
 
     }
 
-
-
     /**
      * reads all rooms
      * @return list of rooms
@@ -48,7 +46,7 @@ public class DataHandler {
     public static Room readRoomByNumber(Integer roomNumber) {
         Room room = null;
         for (Room entry : getRoomList()) {
-            if (entry.getRoomNumber()==roomNumber) {
+            if (entry.getRoomNumber().equals(roomNumber)) {
                 room = entry;
             }
         }

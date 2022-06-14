@@ -17,8 +17,8 @@ public class HotelService {
 
 
     /**
-     * reads a list of all hotels
-     * @return  hotels as JSON
+     * get list of hotels
+     * @return response
      */
     @GET
     @Path("list")
@@ -32,9 +32,9 @@ public class HotelService {
     }
 
     /**
-     * reads a hotel identified by the name
-     * @param hotelName
-     * @return name
+     * read hotel in list
+     * @param hotelName to set
+     * @return response
      */
     @GET
     @Path("read")
@@ -56,6 +56,11 @@ public class HotelService {
     }
 
 
+    /**
+     * create hotel
+     * @param hotel to set
+     * @return response
+     */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
@@ -70,6 +75,11 @@ public class HotelService {
                 .build();
     }
 
+    /**
+     * update hotel in list
+     * @param hotel to set
+     * @return response
+     */
     @POST
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
@@ -95,6 +105,7 @@ public class HotelService {
 
     }
 
+
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
@@ -115,5 +126,3 @@ public class HotelService {
 
     }
 }
-
-

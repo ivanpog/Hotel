@@ -17,6 +17,10 @@ import java.util.UUID;
 @Path("room")
 public class RoomService {
 
+    /**
+     * list of rooms
+     * @return response
+     */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -28,6 +32,11 @@ public class RoomService {
                 .build();
     }
 
+    /**
+     * read room from list
+     * @param roomNumber to set
+     * @return response
+     */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
@@ -50,9 +59,10 @@ public class RoomService {
     }
 
     /**
-     * creates a room inside of roomList
-     * @param hotelName
-     * @return new room
+     * create room
+     * @param room to set
+     * @param hotelName to set
+     * @return response
      */
     @POST
     @Path("create")
@@ -72,9 +82,10 @@ public class RoomService {
     }
 
     /**
-     * updates a room inside of list
-     * @param hotelName
-     * @return updated room
+     * update room
+     * @param room to set
+     * @param hotelName to set
+     * @return response
      */
     @POST
     @Path("update")
@@ -105,6 +116,11 @@ public class RoomService {
 
     }
 
+    /**
+     * delete room
+     * @param roomNumber to set
+     * @return response
+     */
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
