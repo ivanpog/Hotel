@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Path("room")
@@ -24,10 +25,17 @@ public class RoomService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listRooms() {
+    public Response listRooms(
+            @CookieParam("userRole") String userRole
+    ) {
         List<Room> roomList = DataHandler.readAllRooms();
+        int httpStatus=200;
+        if (userRole.equals("guest")){
+            httpStatus=403;
+        }
+
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(roomList)
                 .build();
     }
