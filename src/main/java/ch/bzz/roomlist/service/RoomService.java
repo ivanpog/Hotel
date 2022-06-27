@@ -28,10 +28,13 @@ public class RoomService {
     public Response listRooms(
             @CookieParam("userRole") String userRole
     ) {
-        List<Room> roomList = DataHandler.readAllRooms();
-        int httpStatus=200;
+        List<Room> roomList=null;
+        int httpStatus;
         if (userRole.equals("guest")){
-            httpStatus=403;
+              httpStatus=403;
+        }else{
+             roomList = DataHandler.readAllRooms();
+             httpStatus=200;
         }
 
         return Response
@@ -49,19 +52,24 @@ public class RoomService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readRoom(
-            //here
             @NotNull
-            @QueryParam("number") Integer roomNumber
+            @QueryParam("number") Integer roomNumber,
+            @CookieParam("userRole") String userRole
 
-    )
-    {
+
+    ) {
+        Room room=null;
         int httpStatus = 200;
-        Room room = DataHandler.readRoomByNumber(roomNumber);
-        if (room == null) {
-            httpStatus = 410;
+        if (userRole.equals("guest")) {
+            httpStatus = 403;
+        } else {
+             room = DataHandler.readRoomByNumber(roomNumber);
+            if (room == null) {
+                httpStatus = 410;
+            }
         }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(room)
                 .build();
     }
@@ -72,19 +80,26 @@ public class RoomService {
      * @param hotelName to set
      * @return response
      */
+
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertRoom(
             @Valid @BeanParam Room room,
-            @FormParam("hotelName") String hotelName
+            @FormParam("hotelName") String hotelName,
+            @CookieParam("userRole") String userRole
     ){
-
-        room.setHotelName(hotelName);
+        int httpStatus=0;
+        if (userRole.equals("guest")||userRole.equals("user")) {
+            httpStatus = 403;
+        } else {
+            httpStatus=200;
+            room.setHotelName(hotelName);
+        }
 
         DataHandler.insertRoom(room);
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity("")
                 .build();
     }
@@ -95,26 +110,33 @@ public class RoomService {
      * @param hotelName to set
      * @return response
      */
+
     @POST
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateRoom(
             @Valid @BeanParam Room room,
-            @FormParam("hotelName") String hotelName
+            @FormParam("hotelName") String hotelName,
+            @CookieParam("userRole") String userRole
 
     ){
         int httpStatus=200;
-        Room oldRoom=DataHandler.readRoomByNumber(room.getRoomNumber());
-        if (oldRoom!=null){
-            oldRoom.setSize(room.getSize());
-            oldRoom.setRoomNumber(room.getRoomNumber());
-            oldRoom.setPriceNight(room.getPriceNight());
-            oldRoom.setHotelName(hotelName);
-            oldRoom.setPlaces(room.getPlaces());
+        if (userRole.equals("guest")||userRole.equals("user")) {
+            httpStatus = 403;
+        } else {
 
-            DataHandler.updateRoom();
-        }else{
-            httpStatus=410;
+            Room oldRoom = DataHandler.readRoomByNumber(room.getRoomNumber());
+            if (oldRoom != null) {
+                oldRoom.setSize(room.getSize());
+                oldRoom.setRoomNumber(room.getRoomNumber());
+                oldRoom.setPriceNight(room.getPriceNight());
+                oldRoom.setHotelName(hotelName);
+                oldRoom.setPlaces(room.getPlaces());
+
+                DataHandler.updateRoom();
+            } else {
+                httpStatus = 410;
+            }
         }
 
         return Response
@@ -136,16 +158,22 @@ public class RoomService {
     public Response deleteBook(
             //here
             @NotNull
-            @QueryParam("roomNumber") int roomNumber
-    ){
-        int httpStatus=200;
-        if(!DataHandler.deleteRoom(roomNumber)){
-            httpStatus=410;
+            @QueryParam("roomNumber") int roomNumber,
+            @CookieParam("userRole") String userRole
+
+    ) {
+        int httpStatus = 200;
+        if (userRole.equals("guest")||userRole.equals("user")) {
+            httpStatus = 403;
+        } else {
+            if (!DataHandler.deleteRoom(roomNumber)) {
+                httpStatus = 410;
+            }
+
         }
         return Response
                 .status(httpStatus)
                 .entity("")
                 .build();
-
     }
 }
