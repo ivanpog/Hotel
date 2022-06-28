@@ -1,5 +1,8 @@
 package ch.bzz.roomlist.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class User {
     private String userUUID;
     private String username;
