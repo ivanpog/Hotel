@@ -1,0 +1,1049 @@
+{
+	"id": "20ab812b-5ee3-4d59-b883-3d8c6ec24565",
+	"name": "Hotel Milestone 3",
+	"timestamp": "2022-06-28T13:15:32.691Z",
+	"collection_id": "78314670-18eb-4db4-945b-01803bbc3102",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 29,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "16cfe225-81c6-4703-add8-2830a8e386fb",
+			"name": "Login admin wrong password",
+			"url": "http://localhost:8080/BookList-1/resource/user/login",
+			"time": 104,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				104
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "29c51aa9-2d11-4c5a-92da-1cddcb8f6ac9",
+			"name": "Login admin",
+			"url": "http://localhost:8080/BookList-1/resource/user/login",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "68153654-ab49-484d-8533-dd77e46653fa",
+			"name": "list of hotels (status 200 when user is not guest, else 403)",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/list",
+			"time": 22,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				22
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9075652b-324d-45e5-afe0-dbdac5a8a7b9",
+			"name": "update Hotel (status 200 when user is admin, else 403)",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/update",
+			"time": 56,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				56
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "3e64f046-5542-43ad-b9af-891be4b04509",
+			"name": "create Hotel (status 200 when user is admin, else 403)",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/create",
+			"time": 117,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				117
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "4bd01e93-2e58-4376-86c7-202d7753a8cb",
+			"name": "delete Hotel (status 200 when user is admin, else 403)",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/delete?hotelName=Eightttt",
+			"time": 87,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				87
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5dcae2fa-15ee-46bd-9deb-fd0e8b8589f0",
+			"name": "delete room (status 200 when user is admin, else 403)",
+			"url": "http://localhost:8080/BookList-1/resource/room/delete?roomNumber=799",
+			"time": 14,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f296d647-c173-46cc-9697-eaad0ec1c819",
+			"name": "list of rooms (status 200 when user is not guest, else 403)",
+			"url": "http://localhost:8080/BookList-1/resource/room/list",
+			"time": 36,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				36
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1b0adea4-0390-4a1a-aecc-ad994ad9fe8a",
+			"name": "read room by number (status 200 when user is not guest, else 403)",
+			"url": "http://localhost:8080/BookList-1/resource/room/read?number=1",
+			"time": 29,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				29
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "7dbca024-1d26-4362-9227-83fb9d341a0e",
+			"name": "read hotel by name (status 200 when user is not guest, else 403)",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/read?hotelName=Novotel",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "058d75a5-057f-43ff-bc04-8fb755654fda",
+			"name": "create room (status 200 when user is admin, else 403)",
+			"url": "http://localhost:8080/BookList-1/resource/room/create",
+			"time": 177,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				177
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "753a6b5f-2baa-49b3-82b1-a6e91d74f0a0",
+			"name": "update room (status 200 when user is admin, esle 403)",
+			"url": "http://localhost:8080/BookList-1/resource/room/update",
+			"time": 82,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				82
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "a6c0b6d6-4bc3-4b17-be55-533cac970bb8",
+			"name": "Login user wrong password",
+			"url": "http://localhost:8080/BookList-1/resource/user/login",
+			"time": 63,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				63
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "92b97831-e8f1-47c6-a195-bf367d63e5e5",
+			"name": "Login user",
+			"url": "http://localhost:8080/BookList-1/resource/user/login",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "ba376000-190c-424e-b3e7-a1179dc063b0",
+			"name": "list of hotels (status 200 when user is not guest, else 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/list",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a835f431-4895-4afa-bc5e-9081c6064444",
+			"name": "update Hotel (status 200 when user is admin, else 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/update",
+			"time": 50,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				50
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "743b111d-75a2-4663-9c59-9e89e54b4a88",
+			"name": "create Hotel (status 200 when user is admin, else 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/create",
+			"time": 15,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "0099bc45-37dd-4a57-bd1a-90a31d2a9eed",
+			"name": "delete Hotel (status 200 when user is admin, else 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/delete?hotelName=Eighttt",
+			"time": 17,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "9b7db09e-da04-4d0e-b882-dc58df8a34b7",
+			"name": "delete room (status 200 when user is admin, else 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/room/delete?roomNumber=799",
+			"time": 27,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				27
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "c613290b-1874-4af4-b85b-0a3f0f08d113",
+			"name": "list of rooms (status 200 when user is not guest, else 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/room/list",
+			"time": 14,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "91c70038-ef18-41fc-98ab-4fa88181f123",
+			"name": "read room by number (status 200 when user is not guest, else 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/room/read?number=1",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "d661d2ec-8299-408c-ab6d-051f31a40664",
+			"name": "read hotel by name (status 200 when user is not guest, else 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/read?hotelName=Novotel",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "51bbd8fe-8d2d-4fe0-8636-a1aa43fc73e6",
+			"name": "create room (status 200 when user is admin, else 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/room/create",
+			"time": 93,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				93
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "c34f9358-07fb-440d-abec-4dab37e43b7f",
+			"name": "update room (status 200 when user is admin, esle 403) Copy",
+			"url": "http://localhost:8080/BookList-1/resource/room/update",
+			"time": 10,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "410da4f8-85ba-4887-9dda-2d270d0b6bc2",
+			"name": "Login guest",
+			"url": "http://localhost:8080/BookList-1/resource/user/login",
+			"time": 30,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				30
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "e8d114db-0a39-41ba-9e0b-cf154ad04e69",
+			"name": "list of hotels (status 200 when user is not guest, else 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/list",
+			"time": 13,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "e60d9cc5-05a6-4bb5-bcfa-8385b8769f57",
+			"name": "update Hotel (status 200 when user is admin, else 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/update",
+			"time": 9,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "24bcec0e-567a-4582-a90b-1b068cb37937",
+			"name": "create Hotel (status 200 when user is admin, else 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/create",
+			"time": 13,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "76ad9b70-be7b-4bc0-aedd-305ea06e3f0d",
+			"name": "delete Hotel (status 200 when user is admin, else 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/delete?hotelName=Hilton",
+			"time": 16,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "0593b5a8-380f-4dbc-b59d-fdd992395c17",
+			"name": "delete room (status 200 when user is admin, else 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/room/delete?roomNumber=888",
+			"time": 26,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				26
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "dfd82ccf-d480-4c43-9d04-6cdd67eb3477",
+			"name": "list of rooms (status 200 when user is not guest, else 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/room/list",
+			"time": 12,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "c1e72676-e2d4-42b4-9600-351cb8c0332e",
+			"name": "read room by number (status 200 when user is not guest, else 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/room/read?number=1",
+			"time": 12,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "b7613763-fc4f-471e-9627-bc497eda091d",
+			"name": "read hotel by name (status 200 when user is not guest, else 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/hotel/read?hotelName=Novotel",
+			"time": 42,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				42
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "c519c705-bb54-4068-b8a1-cf350cef719d",
+			"name": "create room (status 200 when user is admin, else 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/room/create",
+			"time": 55,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				55
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "368e14ce-625e-4664-a3aa-b03d6258d448",
+			"name": "update room (status 200 when user is admin, esle 403) Copy 2",
+			"url": "http://localhost:8080/BookList-1/resource/room/update",
+			"time": 10,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1333,
+	"collection": {
+		"requests": [
+			{
+				"id": "16cfe225-81c6-4703-add8-2830a8e386fb",
+				"method": "POST"
+			},
+			{
+				"id": "29c51aa9-2d11-4c5a-92da-1cddcb8f6ac9",
+				"method": "POST"
+			},
+			{
+				"id": "68153654-ab49-484d-8533-dd77e46653fa",
+				"method": "GET"
+			},
+			{
+				"id": "9075652b-324d-45e5-afe0-dbdac5a8a7b9",
+				"method": "POST"
+			},
+			{
+				"id": "3e64f046-5542-43ad-b9af-891be4b04509",
+				"method": "POST"
+			},
+			{
+				"id": "4bd01e93-2e58-4376-86c7-202d7753a8cb",
+				"method": "DELETE"
+			},
+			{
+				"id": "5dcae2fa-15ee-46bd-9deb-fd0e8b8589f0",
+				"method": "DELETE"
+			},
+			{
+				"id": "f296d647-c173-46cc-9697-eaad0ec1c819",
+				"method": "GET"
+			},
+			{
+				"id": "1b0adea4-0390-4a1a-aecc-ad994ad9fe8a",
+				"method": "GET"
+			},
+			{
+				"id": "7dbca024-1d26-4362-9227-83fb9d341a0e",
+				"method": "GET"
+			},
+			{
+				"id": "058d75a5-057f-43ff-bc04-8fb755654fda",
+				"method": "POST"
+			},
+			{
+				"id": "753a6b5f-2baa-49b3-82b1-a6e91d74f0a0",
+				"method": "POST"
+			},
+			{
+				"id": "a6c0b6d6-4bc3-4b17-be55-533cac970bb8",
+				"method": "POST"
+			},
+			{
+				"id": "92b97831-e8f1-47c6-a195-bf367d63e5e5",
+				"method": "POST"
+			},
+			{
+				"id": "ba376000-190c-424e-b3e7-a1179dc063b0",
+				"method": "GET"
+			},
+			{
+				"id": "a835f431-4895-4afa-bc5e-9081c6064444",
+				"method": "POST"
+			},
+			{
+				"id": "743b111d-75a2-4663-9c59-9e89e54b4a88",
+				"method": "POST"
+			},
+			{
+				"id": "0099bc45-37dd-4a57-bd1a-90a31d2a9eed",
+				"method": "DELETE"
+			},
+			{
+				"id": "9b7db09e-da04-4d0e-b882-dc58df8a34b7",
+				"method": "DELETE"
+			},
+			{
+				"id": "c613290b-1874-4af4-b85b-0a3f0f08d113",
+				"method": "GET"
+			},
+			{
+				"id": "91c70038-ef18-41fc-98ab-4fa88181f123",
+				"method": "GET"
+			},
+			{
+				"id": "d661d2ec-8299-408c-ab6d-051f31a40664",
+				"method": "GET"
+			},
+			{
+				"id": "51bbd8fe-8d2d-4fe0-8636-a1aa43fc73e6",
+				"method": "POST"
+			},
+			{
+				"id": "c34f9358-07fb-440d-abec-4dab37e43b7f",
+				"method": "POST"
+			},
+			{
+				"id": "410da4f8-85ba-4887-9dda-2d270d0b6bc2",
+				"method": "POST"
+			},
+			{
+				"id": "e8d114db-0a39-41ba-9e0b-cf154ad04e69",
+				"method": "GET"
+			},
+			{
+				"id": "e60d9cc5-05a6-4bb5-bcfa-8385b8769f57",
+				"method": "POST"
+			},
+			{
+				"id": "24bcec0e-567a-4582-a90b-1b068cb37937",
+				"method": "POST"
+			},
+			{
+				"id": "76ad9b70-be7b-4bc0-aedd-305ea06e3f0d",
+				"method": "DELETE"
+			},
+			{
+				"id": "0593b5a8-380f-4dbc-b59d-fdd992395c17",
+				"method": "DELETE"
+			},
+			{
+				"id": "dfd82ccf-d480-4c43-9d04-6cdd67eb3477",
+				"method": "GET"
+			},
+			{
+				"id": "c1e72676-e2d4-42b4-9600-351cb8c0332e",
+				"method": "GET"
+			},
+			{
+				"id": "b7613763-fc4f-471e-9627-bc497eda091d",
+				"method": "GET"
+			},
+			{
+				"id": "c519c705-bb54-4068-b8a1-cf350cef719d",
+				"method": "POST"
+			},
+			{
+				"id": "368e14ce-625e-4664-a3aa-b03d6258d448",
+				"method": "POST"
+			}
+		]
+	}
+}

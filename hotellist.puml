@@ -1,0 +1,108 @@
+@startuml
+class ch.bzz.roomlist.service.RoomService {
++ Response listRooms(String)
++ Response readRoom(Integer,String)
++ Response insertRoom(Room,String,String)
++ Response updateRoom(Room,String,String)
++ Response deleteBook(int,String)
+}
+class ch.bzz.roomlist.model.Room {
+- Hotel hotel
+- Integer roomNumber
+- String size
+- BigDecimal priceNight
+- Integer places
++ String getHotelName()
++ void setHotelName(String)
++ Hotel getHotel()
++ void setHotel(Hotel)
++ Integer getRoomNumber()
++ void setRoomNumber(Integer)
++ String getSize()
++ void setSize(String)
++ BigDecimal getPriceNight()
++ void setPriceNight(BigDecimal)
++ Integer getPlaces()
++ void setPlaces(Integer)
+}
+class ch.bzz.roomlist.service.HotelService {
++ Response listHotels(String)
++ Response readPublisher(String,String)
++ Response insertHotel(Hotel,String)
++ Response updateHotel(Hotel,String)
++ Response deleteHotel(String,String)
+}
+class ch.bzz.roomlist.data.UserData {
+- {static} UserData instance
++ {static} User findUser(String,String)
+- {static} List<User> readJson()
+}
+class ch.bzz.roomlist.model.Hotel {
+- Integer number
+- String hotelName
++ String getHotelName()
++ Integer getNumber()
++ void setNumber(Integer)
++ void setHotelName(String)
+}
+class ch.bzz.roomlist.service.UserService {
++ Response login(String,String)
++ Response logout()
+}
+class ch.bzz.roomlist.service.TestService {
++ Response test()
+}
+class ch.bzz.roomlist.data.DataHandler {
+- {static} DataHandler instance
+- {static} List<Room> roomList
+- {static} List<Hotel> hotelList
+- {static} List<User> userList
++ {static} List<Room> readAllRooms()
++ {static} Room readRoomByNumber(Integer)
++ {static} void insertRoom(Room)
++ {static} void updateRoom()
++ {static} boolean deleteRoom(Integer)
++ {static} List<Hotel> readAllHotels()
++ {static} Hotel readHotelByName(String)
++ {static} void insertHotel(Hotel)
++ {static} void updateHotel()
++ {static} boolean deleteHotel(String)
+- {static} void readRoomJSON()
+- {static} void writeRoomJSON()
+- {static} void readHotelJSON()
+- {static} void writeHotelJSON()
+- {static} void readUserJSON()
++ String readUserRole(String,String)
+- {static} List<Room> getRoomList()
+- {static} void setRoomList(List<Room>)
+- {static} List<Hotel> getHotelList()
+- {static} void setHotelList(List<Hotel>)
++ {static} List<User> getUserList()
++ {static} void setUserList(List<User>)
+}
+class ch.bzz.roomlist.service.Config {
+- {static} String PROPERTIES_PATH
+- {static} Properties properties
++ Set<Class<?>> getClasses()
++ {static} String getProperty(String)
+- {static} void readProperties()
+- {static} void setProperties(Properties)
+}
+class ch.bzz.roomlist.model.User {
+- String userUUID
+- String username
+- String password
+- String role
++ String getUserUUID()
++ void setUserUUID(String)
++ String getUsername()
++ void setUsername(String)
++ String getPassword()
++ void setPassword(String)
++ String getRole()
++ void setRole(String)
+}
+
+
+javax.ws.rs.core.Application <|-- ch.bzz.roomlist.service.Config
+@enduml
