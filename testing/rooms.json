@@ -1,20 +1,14 @@
 [ {
   "roomNumber" : 1,
   "size" : "medium",
-  "priceNight" : 640.90,
-  "places" : 4,
-  "hotelName" : "Hilton"
+  "priceNight" : 111.90,
+  "places" : 2,
+  "hotelName" : "Ibis"
 }, {
   "roomNumber" : 2,
   "size" : "small",
   "priceNight" : 111.11,
   "places" : 3,
-  "hotelName" : "Ibis"
-}, {
-  "roomNumber" : 3,
-  "size" : "ultra small",
-  "priceNight" : 98.90,
-  "places" : 2,
   "hotelName" : "Ibis"
 }, {
   "roomNumber" : 4,
@@ -23,15 +17,46 @@
   "places" : 6,
   "hotelName" : "Four Seasons"
 }, {
-  "roomNumber" : 5,
-  "size" : "king size",
-  "priceNight" : 555.55,
-  "places" : 10,
-  "hotelName" : "Novotel"
+  "roomNumber" : 7,
+  "size" : "small",
+  "priceNight" : 345.68,
+  "places" : 4,
+  "hotelName" : "Seven"
 }, {
-  "roomNumber" : 6,
-  "size" : "huge",
-  "priceNight" : 110.90,
-  "places" : 1,
-  "hotelName" : "Six"
-} ]
+  "roomNumber" : 7,
+  "size" : "small",
+  "priceNight" : 345.68,
+  "places" : 4,
+  "hotelName" : "Seven"
+}, {
+  "roomNumber" : 7,
+  "size" : "small",
+  "priceNight" : 345.68,
+  "places" : 4,
+  "hotelName" : "Seven"
+}, {
+  "roomNumber" : 7,
+  "size" : "small",
+  "priceNight" : 345.68,
+  "places" : 4,
+  "hotelName" : "Seven"
+},{
+  "roomNumber" : 79,
+  "size" : "small",
+  "priceNight" : 345.68,
+  "places" : 4,
+  "hotelName" : "Seven"
+},{
+  "roomNumber" : 799,
+  "size" : "small",
+  "priceNight" : 345.68,
+  "places" : 4,
+  "hotelName" : "Seven"
+},{
+  "roomNumber" : 888,
+  "size" : "small",
+  "priceNight" : 345.68,
+  "places" : 4,
+  "hotelName" : "Seven"
+}
+]
